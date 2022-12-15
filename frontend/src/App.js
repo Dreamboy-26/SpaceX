@@ -3,7 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Banner from './components/Banner'
 import Nasa from './svg/Nasa.jpg'
-import newBackg from './svg/newBackg.jpg'
+import newBackg from './svg/galaxy.jpg'
 
 import Data from './components/Data'
 function App() {

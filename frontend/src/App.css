@@ -163,3 +163,89 @@ text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
 
   animation: shad-anim 15s linear infinite;
   }
+
+
+  @media only screen and (max-width: 1000px) {
+    .bannerImg {
+      width: 800px;
+      height: 400px;
+    }
+   
+
+  }
+
+  @media only screen and (max-width: 800px) {
+    .bannerImg {
+      width: 600px;
+      height: 300px;
+    }
+    .bannerImg>h1{
+   
+      font-size: 30px;
+    }
+
+    .popUp-inner{
+      position: relative;
+      padding: 32px;
+      width: 400px;
+     
+  
+    }
+
+
+ 
+
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .bannerImg {
+      width: 400px;
+      height: 200px;
+
+    }
+    .bannerImg>h1{
+     
+      font-size: 20px;
+    }
+
+    .dataContainer{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+    }
+
+
+    
+    .popUp-inner{
+      position: relative;
+      padding: 32px;
+      width: 350px;
+     
+  
+    }
+
+  }
+
+
+  @media only screen and (max-width: 400px) {
+    .bannerImg {
+      width: 280px;
+      height: 160px;
+    }
+    .bannerImg>h1{
+      font-size: 20px;
+    }
+
+    .dataContainer{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+    }
+
+    .popUp-inner{
+      position: relative;
+      padding: 32px;
+      width: 250px;
+     
+  
+    }
+  }

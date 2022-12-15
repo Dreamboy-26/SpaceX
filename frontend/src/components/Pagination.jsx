@@ -13,7 +13,7 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
   return (
     <ul className="pagination">
       <li>
-        <a className="page-item " onClick={prevPage}>Previus</a>
+        <a className="page-item " onClick={prevPage}>Previous</a>
       </li>
       {pageNumbers.map((e) => {
         return (
