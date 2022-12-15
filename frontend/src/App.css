@@ -1,6 +1,7 @@
 .body {
   background:#817f7f; 
-  
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .NavContainer{
@@ -8,17 +9,19 @@
   margin-bottom: 50px;
 }
 .bannerImg{
-  border: 2px solid black;
 border-radius: 20px;
   height: 500px;
-  width: 800px;
+  width: 1000px;
   margin: auto;
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: center;
 background-position-y: center;
+color: white;
+padding: 20px;
 
 }
+
 
 .details{
   color: white;
@@ -27,17 +30,20 @@ background-position-y: center;
 
 .dataContainer{
   display: grid;
-  gap: 10px;
+  gap: 20px;
   grid-template-columns: repeat(3,1fr);
   
 }
 
 .dataSubContainer{
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(230, 215, 215, 0.35) 0px 5px 15px;
   border-radius: 10px;
   padding: 10px;
   color: white;
-  background-color: black
+  background: #1F1C2C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #928DAB, #1F1C2C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #928DAB, #1F1C2C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 .popUp{
@@ -59,9 +65,6 @@ background-position-y: center;
   background-color: rgb(80, 94, 94);
 }
 
-.dataPage{
-  margin-top: 50px;
-}
 
 .filterContainer{
   margin-bottom: 50px;
@@ -70,7 +73,18 @@ background-position-y: center;
 
 .input{
   border: 2px solid black;
-  
+  padding: 10px;
+}
+
+.searchButton{
+  padding: 10px;
+  margin-left: 10px;
+
+}
+.searchButton:hover{
+  color: white;
+  background-color: black;
+  cursor: pointer;
 }
 
 .popUp-inner >h3{
@@ -105,3 +119,47 @@ li{
 .page-item:active{
   background-color: blue;
 }
+
+.dataName{
+  width: 200px;
+  margin: auto;
+  top: 0;
+
+}
+
+
+
+
+body:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  }
+
+.dataName>h1 {
+display: inline-block;
+color: white;
+font-family: 'Righteous', serif;
+font-size: 50px;
+text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
+}
+.dataName>h1:after {
+  position: absolute;
+  top: .06em; left: .06em;
+  z-index: -1;
+  text-shadow: none;
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 45%,
+      hsla(48,20%,90%,1) 45%,
+      hsla(48,20%,90%,1) 55%,
+      transparent 0
+      );
+  background-size: .05em .05em;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: shad-anim 15s linear infinite;
+  }

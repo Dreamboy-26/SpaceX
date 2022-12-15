@@ -12,12 +12,16 @@ const SingleData = ({ data }) => {
     <>
       <div>
         <div className="dataSubContainer" onClick={handlePopUp}>
-          <h3>Capsule_id: {data.capsule_id}</h3>
-          <h3>{data.capsule_serial}</h3>
+          <h3>
+            <span>Capsule_id:</span> {data.capsule_id}
+          </h3>
 
-          <h3>{data.original_launch}</h3>
-          <h3><span>Status: </span>{data.status}</h3>
-          <h3>{data.type}</h3>
+          <h3><span>original_launch</span> {data.original_launch}</h3>
+          <h3>
+            <span>Status: </span>
+            {data.status}
+          </h3>
+          <h3><span>Type</span> {data.type}</h3>
         </div>
       </div>
       {popUp && <Popup data={data} close={setPopup} />}

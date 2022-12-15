@@ -15,7 +15,6 @@ const Data = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(10);
 
-
   const handleChange = (e) => {
     setSearchData({ ...searchData, [e.target.name]: e.target.value });
   };
@@ -45,10 +44,12 @@ const Data = () => {
 
   console.log(currentRecords);
 
-
   return (
     <>
       <div className="dataPage">
+        <div className="dataName">
+      <h1>Capsules</h1>
+        </div>
         <div className="filterContainer">
           <form onSubmit={handleSubmit}>
             <input
@@ -72,9 +73,10 @@ const Data = () => {
               name="type"
               onChange={handleChange}
             />
-            <input type="submit" value="Search" />
+            <input type="submit" className="searchButton" value="Search" />
           </form>
         </div>
+
         <div className="dataContainer">
           {currentRecords.map((e, index) => {
             return <SingleData data={e} key={index} />;
