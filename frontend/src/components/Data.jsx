@@ -1,9 +1,81 @@
-import React from 'react'
-
+import React from "react";
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
+import SingleData from "./SingleData";
 const Data = () => {
-  return (
-    <div>Data</div>
-  )
-}
+  const [data, setData] = useState([]);
+  const [searchData, setSearchData] = useState({
+    status: "",
+    launch: "",
+    type: "",
+  });
 
-export default Data
+  const [page,setPage]=useState(1)
+
+
+
+  const handleChange = (e) => {
+    setSearchData({ ...searchData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const getdata = async () => {
+    await axios
+      .get(
+        `https://api.spacexdata.com/v3/capsules?status=${searchData.status}&original_launch=${searchData.launch}&type=${searchData.type}`
+      )
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      });
+  };
+
+  useEffect(() => {
+    getdata();
+  }, [searchData]);
+
+  return (
+    <>
+    <div className="dataPage">
+    <div className="filterContainer">
+        <form onSubmit={handleSubmit}>
+          <input
+          className="input"
+            type="text"
+            placeholder="Search by status"
+            name="status"
+            onChange={handleChange}
+          />
+          <input
+           className="input"
+            type="text"
+            placeholder="Search by Original launch"
+            name="launch"
+            onChange={handleChange}
+          />
+          <input
+           className="input"
+            type="text"
+            placeholder="Search by Type"
+            name="type"
+            onChange={handleChange}
+          />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+      <div className="dataContainer">
+        {data.map((e, index) => {
+          return <SingleData data={e} key={index} />;
+        })}
+      </div>
+    </div>
+  
+    </>
+  );
+};
+
+export default Data;
